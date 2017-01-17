@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Driver.delete_all
+
+d1 = Driver.create({name: 'Stirling Moss'})
+d2 = Driver.create({name: 'Derek Bell'})
+d3 = Driver.create({name: 'Ayrton Senna'})
+d4 = Driver.create({name: 'Colin McRae'})

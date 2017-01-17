@@ -1,3 +1,3 @@
 class Team < ActiveRecord::Base
-  belongs_to :driver
+  has_many :driver
 end

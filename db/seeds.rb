@@ -5,16 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Driver.delete_all
-
-d1 = Driver.create({name: 'Stirling Moss'})
-d2 = Driver.create({name: 'Derek Bell'})
-d3 = Driver.create({name: 'Ayrton Senna'})
-d4 = Driver.create({name: 'Colin McRae'})
 
 Team.delete_all
 
-Team.create({driver_id: d1.id, name: "Lotus"})
-Team.create({driver_id: d2.id, name: "Lotus"})
-Team.create({driver_id: d3.id, name: "Ferarri"})
-Team.create({driver_id: d1.id, name: "Ferrari"})
+t1 = Team.create({name: "Lotus"})
+t2 = Team.create({name: "Ferarri"})
+
+Driver.delete_all
+
+Driver.create({team_id: t1.id, name: 'Stirling Moss'})
+Driver.create({team_id: t1.id, name: 'Derek Bell'})
+Driver.create({team_id: t2.id, name: 'Ayrton Senna'})
+Driver.create({team_id: t2.id, name: 'Colin McRae'})
+

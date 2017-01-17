@@ -11,21 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170117135048) do
+ActiveRecord::Schema.define(version: 20170117142603) do
 
   create_table "drivers", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "team_id"
   end
+
+  add_index "drivers", ["team_id"], name: "index_drivers_on_team_id"
 
   create_table "teams", force: :cascade do |t|
     t.string   "name"
-    t.integer  "driver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "teams", ["driver_id"], name: "index_teams_on_driver_id"
 
 end

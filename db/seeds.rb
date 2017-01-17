@@ -11,3 +11,10 @@ d1 = Driver.create({name: 'Stirling Moss'})
 d2 = Driver.create({name: 'Derek Bell'})
 d3 = Driver.create({name: 'Ayrton Senna'})
 d4 = Driver.create({name: 'Colin McRae'})
+
+Team.delete_all
+
+Team.create({driver_id: d1.id, name: "Lotus"})
+Team.create({driver_id: d2.id, name: "Lotus"})
+Team.create({driver_id: d3.id, name: "Ferarri"})
+Team.create({driver_id: d1.id, name: "Ferrari"})
